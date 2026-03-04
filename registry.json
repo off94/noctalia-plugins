@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "color-hypr-picker",
+      "name": "color-hypr-picker",
+      "version": "1.0.0",
+      "official": false,
+      "author": "off94",
+      "description": "A color picker plugin that extends Noctalia's base one with hyprpicker. Paste several color codes to your clipboard, and browse recent colors list.",
+      "repository": "https://github.com/off94/noctalia-plugins",
+      "minNoctaliaVersion": "4.3.2",
+      "license": "MIT",
+      "tags": ["Bar", "Panel", "Development", "Fun"],
+      "lastUpdated": "2026-03-04T00:00:00+01:00"
+    },
+    {
+      "id": "hyprshot-menu",
+      "name": "Hyprshot menu",
+      "version": "1.0.0",
+      "official": false,
+      "author": "off94",
+      "description": "A GUI to do several kinds of screenshots with hyprshot.",
+      "repository": "https://github.com/off94/noctalia-plugins",
+      "minNoctaliaVersion": "4.3.2",
+      "license": "MIT",
+      "tags": ["Bar", "Panel", "Productivity"],
+      "lastUpdated": "2026-03-04T00:00:00+01:00"
+    },
+    {
+      "id": "radio-player",
+      "name": "Radio player",
+      "version": "1.0.0",
+      "official": false,
+      "author": "off94",
+      "description": "A radio player widget that lets you listen to any radio station online from a custom list.",
+      "repository": "https://github.com/off94/noctalia-plugins",
+      "minNoctaliaVersion": "4.3.2",
+      "tags": ["Bar", "Panel", "Audio", "Fun"],
+      "lastUpdated": "2026-03-04T00:00:00+01:00"
+    }
+  ]
+}
