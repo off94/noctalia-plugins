@@ -1,0 +1,22 @@
+{
+  "id": "radio-player",
+  "name": "Radio Player",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "4.3.2",
+  "author": "off94",
+  "license": "MIT",
+  "repository": "https://github.com/off94/noctalia-plugins",
+  "description": "A radio player widget that lets you listen to any radio station online from a custom list.",
+  "tags": ["Bar", "Panel", "Audio", "Fun"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "metadata": {
+    "defaultSettings": {
+      "radioList": []
+    }
+  }
+}

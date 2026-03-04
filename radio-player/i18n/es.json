@@ -1,0 +1,24 @@
+{
+    "main": {
+        "errorMarquee": "Error leyendo canción"
+    },
+    "bar": {
+        "tooltip": "Reproductor de radio"
+    },
+    "panel": {
+        "title": "Reproductor de radio",
+        "defMarquee": "No hay música"
+    },
+    "settings": {
+        "radioList": {
+            "title": "Lista de radios",
+            "description": "Click izquierdo para arrastrar y reordenar, click derecho para eliminar",
+            "name": "Nombre",
+            "url": "URL",
+            "add": "Añadir",
+            "pasteToImport": "Pegar JSON",
+            "import": "Importar",
+            "export": "Exportar"
+        }
+    }
+}

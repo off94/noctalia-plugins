@@ -1,0 +1,24 @@
+{
+    "main": {
+        "errorMarquee": "Error parsing song"
+    },
+    "bar": {
+        "tooltip": "Radio player"
+    },
+    "panel": {
+        "title": "Radio player",
+        "defMarquee": "No music"
+    },
+    "settings": {
+        "radioList": {
+            "title": "Radio list",
+            "description": "Left-click to drag and re-order, right-click to remove",
+            "name": "Name",
+            "url": "URL",
+            "add": "Add",
+            "pasteToImport": "Paste JSON",
+            "import": "Import",
+            "export": "Export"
+        }
+    }
+}
