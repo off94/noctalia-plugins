@@ -56,3 +56,5 @@ compile_commands.json
 .git
 .idea
 
+# Plugin runtime/user settings
+**/settings.json
