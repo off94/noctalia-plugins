@@ -1,0 +1,10 @@
+{
+  "bar": {
+    "tooltip": "Selector de color"
+  },
+  "panel": {
+    "title": "Selector de color",
+    "pick": "Seleccionar en pantalla",
+    "remove": "Borrar todo"
+  }
+}

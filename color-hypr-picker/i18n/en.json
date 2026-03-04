@@ -1,0 +1,10 @@
+{
+  "bar": {
+    "tooltip": "Color picker"
+  },
+  "panel": {
+    "title": "Color Picker",
+    "pick": "Pick from screen",
+    "remove": "Delete all"
+  }
+}
