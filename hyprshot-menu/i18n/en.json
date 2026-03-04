@@ -1,0 +1,44 @@
+{
+    "bar": {
+        "tooltip": "Take a screenshot"
+    },
+    "panel": {
+        "title": "HyprShot Menu",
+        "active": "Active",
+        "output": "Output",
+        "window": "Window",
+        "region": "Region",
+        "delay": "Delay",
+        "clipboardOnly": "Clipboard only",
+        "freeze": "Freeze"
+    },
+    "settings": {
+        "modeFast": {
+            "value": "Mode (Fast action)",
+            "description": "Mode to use when middle clicking the button"
+        },
+        "folder": {
+            "value": "Path to output",
+            "description": "Path where to store screenshots"
+        },
+        "filename": {
+            "value": "Filename",
+            "description": "Filename for new screenshots (plus datetime)"
+        },
+        "notification_ms": {
+            "value": "Notification duration",
+            "description": "Time in ms for the notification after screenshot"
+        },
+        "outputs": {
+            "value": "Output list",
+            "description": "e.g. name: MyOutput, key: DP-1",
+            "key": "Key ID",
+            "name": "Name",
+            "add": "Add",
+            "remove": "Remove"
+        },
+        "output": "Output",
+        "window": "Window",
+        "region": "Region"
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "hyprshot-menu",
+  "name": "Hyprshot menu",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "4.3.2",
+  "author": "off94",
+  "license": "MIT",
+  "repository": "https://github.com/off94/noctalia-plugins",
+  "description": "A GUI to do several kinds of screenshots with hyprshot.",
+  "tags": ["Bar", "Panel", "Productivity"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "controlCenterWidget": "ControlCenterWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "metadata": {
+    "defaultSettings": {
+      "mode": "region",
+      "output": {"key": "active", "name": "Active"},
+      "folder": "~",
+      "filename": "ScreenShot",
+      "freeze": false,
+      "notification_ms": 5000,
+      "delay_ms": 400,
+      "no_save": false,
+      "outputs": []
+    }
+  }
+}

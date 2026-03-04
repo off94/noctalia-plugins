@@ -1,0 +1,44 @@
+{
+    "bar": {
+        "tooltip": "Hacer captura de pantalla"
+    },
+    "panel": {
+        "title": "Menú HyprShot",
+        "active": "Activo",
+        "output": "Monitor",
+        "window": "Ventana",
+        "region": "Área",
+        "delay": "Retraso",
+        "clipboardOnly": "Solo portapapeles",
+        "freeze": "Congelar"
+    },
+    "settings": {
+        "modeFast": {
+            "value": "Modo (Acción rápida)",
+            "description": "Modo a usar al clicar con la rueda en el botón"
+        },
+        "folder": {
+            "value": "Carpeta de salida",
+            "description": "Ruta donde almacenar las nuevas capturas"
+        },
+        "filename": {
+            "value": "Nombre de fichero",
+            "description": "Nombre para las nuevas capturas (más fecha y hora)"
+        },
+        "notification_ms": {
+            "value": "Duración de notificación",
+            "description": "Tiempo en ms para la notificación de la captura"
+        },
+        "outputs": {
+            "value": "Listado de monitores",
+            "description": "e.g. nombre: MiMonitor, clave: DP-1",
+            "key": "Clave",
+            "name": "Nombre",
+            "add": "Añadir",
+            "remove": "Eliminar"
+        },
+        "output": "Monitor",
+        "window": "Ventana",
+        "region": "Área"
+    }
+}
