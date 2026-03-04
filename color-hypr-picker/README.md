@@ -1,9 +1,9 @@
-# Color hyprpicker
+# Color (hypr)picker
 
 A color picker plugin that extends Noctalia's base one with hyprpicker. Paste several color codes to your clipboard, 
 and browse recent colors list.
 
-![Preview](preview.png "Color hyprpicker preview")
+![Preview](preview.png "Color (hypr)picker preview")
 
 
 ## Features
