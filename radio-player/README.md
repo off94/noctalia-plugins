@@ -43,3 +43,6 @@ qs -c noctalia-shell ipc call plugin:radio-player <command>
     }
 ]
 ```
+## Dependencies
+-**mpv**: Music player 
+-**mpv-mpris**: mpv library to use mpris
