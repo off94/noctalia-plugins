@@ -1,7 +1,7 @@
 {
   "id": "radio-player",
   "name": "Radio Player",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minNoctaliaVersion": "4.3.2",
   "author": "off94",
   "license": "MIT",

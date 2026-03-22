@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import qs.Services.UI
+import qs.Services.System
 import qs.Commons
 
 Item {
@@ -12,14 +13,26 @@ Item {
     property string currentMarquee: ""
     property int currentPlayPid: -1
 
+    property var radioList:
+        pluginApi?.pluginSettings?.radioList ||
+        pluginApi?.manifest?.metadata?.defaultSettings?.radioList ||
+        []
+
     IpcHandler {
-        target: "plugin:radio"
+        target: "plugin:radio-player"
         function toggle() {
             if (pluginApi) {
                 pluginApi.withCurrentScreen(screen => {
                     pluginApi.openPanel(screen);
                 });
             }
+        }
+        function play(index: int) {
+            // Index is 1-based from the IPC call to use keyboard order, convert to 0-based
+            root.playRadio(index-1);
+        }
+        function stop() {
+            root.stopRadio();
         }
     }
 
@@ -48,6 +61,50 @@ Item {
                     }
                 }
             }
+        }
+    }
+
+
+    function playRadio(index) {
+        const radio = radioList[index];
+        if (!radio) {
+            return;
+        }
+        if (currentPlayPid !== -1) {
+            stopRadio();
+        }
+        Quickshell.execDetached([
+            "mpv",
+            "--no-video",
+            "--player-operation-mode=pseudo-gui",
+            "--force-window=no",
+            "--idle=yes",
+            "--input-ipc-server=/tmp/noctalia-radio-mpv-socket",
+            `--title=Noctalia-Radio-${radio.name}`,
+            radio.url
+        ]);
+        currentPlayPid = index;
+        Logger.i("RADIO", `Playing: ${radio.name}`);
+    }
+
+    function stopRadio() {
+        if (currentPlayPid === -1) {
+            return;
+        }
+        const radio = radioList[currentPlayPid];
+        if (radio) {
+            Quickshell.execDetached(["pkill", "-f", `Noctalia-Radio-${radio.name}`]);
+            Logger.i("RADIO", `Stopping: ${radio.name}`);
+        }
+        currentPlayPid = -1;
+        currentMarquee = pluginApi?.tr("panel.defMarquee") || "No music";
+    }
+
+    function toggleRadio(index) {
+        if (currentPlayPid === index) {
+            stopRadio();
+        } else {
+            playRadio(index);
         }
     }
 

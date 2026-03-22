@@ -3,14 +3,13 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import qs.Commons
-import qs.Services.System
 import qs.Widgets
 
 Item {
     id: root
 
     property var radioData
-    property bool playing: false
+    readonly property bool playing: pluginApi?.mainInstance?.currentPlayPid === root.pid
     property int pid: -1
 
     signal startedPlaying(var data)
@@ -19,8 +18,12 @@ Item {
     width: parent.width
     height: 60
 
-    Component.onCompleted: {
-        root.playing = pluginApi.mainInstance.currentPlayPid === root.pid
+    onPlayingChanged: {
+        if (playing) {
+            startedPlaying(root.radioData);
+        } else {
+            stoppedPlaying(root.radioData);
+        }
     }
 
     Rectangle {
@@ -58,52 +61,7 @@ Item {
         }
     }
 
-    Connections {
-        target: contentColumn
-        function onPlayingPidChanged() {
-            if (contentColumn.playingPid !== root.pid) {
-                stopRadio();
-            }
-        }
-    }
-
-    function playRadio() {
-        if (root.playing) return;
-        Quickshell.execDetached([
-            "mpv",
-            "--no-video",
-            "--player-operation-mode=pseudo-gui",
-            "--force-window=no",
-            "--idle=yes",
-            "--input-ipc-server=/tmp/noctalia-radio-mpv-socket",
-            `--title=Noctalia-Radio-${radioData.name}`,
-            radioData.url
-        ])
-        root.playing = true;
-        pluginApi.mainInstance.currentPlayPid = root.pid;
-        startedPlaying(root.radioData)
-        Logger.i("RADIO", `Playing: ${radioData.name}`)
-    }
-
-    function stopRadio() {
-        if (!root.playing) return;
-        Quickshell.execDetached([
-            "pkill",
-            "-f",
-            `Noctalia-Radio-${radioData.name}`
-        ]);
-        root.playing = false;
-        Logger.i("RADIO", `Stopping: ${radioData.name}`)
-    }
-
     function toggleRadio() {
-        if (root.playing) {
-            stopRadio();
-            pluginApi.mainInstance.currentMarquee = pluginApi?.tr("panel.defMarquee");
-            pluginApi.mainInstance.currentPlayPid = -1;
-            stoppedPlaying(root.radioData)
-        } else {
-            playRadio();
-        }
+        pluginApi.mainInstance.toggleRadio(root.pid);
     }
 }

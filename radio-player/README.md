@@ -7,6 +7,7 @@ A radio player widget that lets you listen to any radio station online from a cu
 ## Features
 
 - **Custom list**: Create your own custom list of radios for quick access.
+- **Play/Stop**: Start or stop any radio station with a single click or keybind.
 - **Currently playing**: A bar showing currently playing music if data is available.
 - **Import/Export**: Export your list directly to your clipboard in JSON format. Import it later or share with friends.
 
@@ -21,9 +22,11 @@ qs -c noctalia-shell ipc call plugin:radio-player <command>
 
 ### Available Commands
 
-| Command     | Description                                      | Example                                                         |
-|-------------|--------------------------------------------------|-----------------------------------------------------------------|
-| `toggle`    | Opens or closes the panel on the current screen  | `qs -c noctalia-shell ipc call plugin:radio-player toggle` |
+| Command  | Description                                                     | Example                                                    |
+|----------|-----------------------------------------------------------------|------------------------------------------------------------|
+| `toggle` | Opens or closes the panel on the current screen                 | `qs -c noctalia-shell ipc call plugin:radio-player toggle` |
+| `play`   | Plays the radio station in the position of the provided 1-index | `qs -c noctalia-shell ipc call plugin:radio-player play 1` |
+| `stop`   | Stops any radio station currently playing                       | `qs -c noctalia-shell ipc call plugin:radio-player stop`   |
 
 
 ## Settings
@@ -31,8 +34,8 @@ qs -c noctalia-shell ipc call plugin:radio-player <command>
 | Setting                   | Default      | Description                         |
 |---------------------------|--------------|-------------------------------------|
 | `radioList`               | `empty list` | An array of radios                  |
-| `radioList.name`          |        | Name of radio to show in plugin     |
-| `radioList.url`           |         | URL from where to fetch radio music |
+| `radioList.name`          |              | Name of radio to show in plugin     |
+| `radioList.url`           |              | URL from where to fetch radio music |
 
 ### Example of `radioList` setting:
 ```json

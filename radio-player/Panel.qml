@@ -150,8 +150,6 @@ Item {
                                     width: parent.width - Style.marginL * 2
                                     spacing: Style.marginM
 
-                                    property int playingPid: pluginApi.mainInstance?.currentPlayPid
-
                                     Repeater {
                                         model: root.radioList
                                         delegate: RadioWidget {
